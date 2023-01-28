@@ -8,8 +8,8 @@ import {
     IconButton,
 } from "@material-tailwind/react";
 
-const Header = () => {
-
+const Header = ({ user }) => {
+    console.log(user)
     const [openNav, setOpenNav] = useState(false);
 
     useEffect(() => {
@@ -38,8 +38,8 @@ const Header = () => {
                 color="blue-gray"
                 className="p-1 font-normal text-md"
             >
-                <Link to="/review" className="flex items-center">
-                    Review
+                <Link to="/reviews" className="flex items-center">
+                    Reviews
                 </Link>
             </Typography>
             <Typography
@@ -58,9 +58,16 @@ const Header = () => {
                 color="blue-gray"
                 className="p-1 font-normal text-md"
             >
-                <Link to="/contact" className="flex items-center">
-                    Contact
-                </Link>
+                {
+                    user.email === 'thenaim333@gmail.com' ?
+
+                        <Link to="/orders" className="flex items-center">
+                            Orders
+                        </Link> :
+                        <Link to="/order" className="flex items-center">
+                            Order
+                        </Link>
+                }
             </Typography>
         </ul>
     );
@@ -79,9 +86,15 @@ const Header = () => {
                         <span className="text-2xl font-semibold">Shiny House</span>
                     </Typography>
                     <div className="hidden lg:block">{navList}</div>
-                    <Button size="md" className="hidden lg:inline-block bg-black rounded-md">
-                        <span>Login</span>
-                    </Button>
+                    {
+                        user.displayName ?
+                            <Link to="/profile" className="hidden lg:inline-block">{user.displayName}</Link>
+                            :
+                            <Button size="md" className="hidden lg:inline-block bg-black rounded-md">
+                                <Link to="/login">Login</Link>
+                            </Button>
+                    }
+
                     <IconButton
                         variant="text"
                         className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
@@ -122,8 +135,14 @@ const Header = () => {
                 </div>
                 <MobileNav open={openNav}>
                     {navList}
-                    <Button variant="gradient" size="sm" fullWidth className="mb-2">
-                        <span>Buy Now</span>
+                    <Button size="sm" fullWidth className="mb-2  bg-black rounded-md">
+
+                        {user.displayName ?
+                            <Link to="/profile">Your Profile</Link> :
+                            <Link to="/login">Login</Link>
+                        }
+
+
                     </Button>
                 </MobileNav>
             </Navbar>
