@@ -30,7 +30,7 @@ const CreateOrder = ({ user }) => {
         console.log(orderDate)
 
         const { data } = await axios.post(
-            `/api/order/create`,
+            `https://assignment-11-server-roan-one.vercel.app/api/order/create`,
             {
                 orderDate,
                 user
@@ -47,7 +47,7 @@ const CreateOrder = ({ user }) => {
 
     useEffect(() => {
         async function fetchOrder() {
-            await fetch(`/api/orders/me`, {
+            await fetch(`https://assignment-11-server-roan-one.vercel.app/api/orders/me`, {
                 method: "GET",
                 headers: {
                     'Content-Type': 'application/json',

@@ -12,7 +12,7 @@ const Reviews = ({ user }) => {
 
         async function fetchReviews() {
             const { data } = await axios.get(
-                `/api/reviews`
+                `https://assignment-11-server-roan-one.vercel.app/api/reviews`
 
             );
             setReviews(data.reviews)
@@ -35,9 +35,9 @@ const Reviews = ({ user }) => {
                     {
                         reviews.map(({ email, username, userImage, reviewText }) => (
                             <div className="md:w-1/4 mx-2 mt-5 w-2/3 md:mr-5 mx-auto rounded-xl bg-[#af9568] 
-flex flex-col items-center cursor-pointer px-5 py-10 
-transition ease-in-out delay-150 bg-[#7f8382] hover:-translate-y-1
-hover:scale-110  duration-300" key={email}>
+                      flex flex-col items-center cursor-pointer px-5 py-10 
+                       transition ease-in-out delay-150 bg-[#7f8382] hover:-translate-y-1
+                       hover:scale-110  duration-300" key={email}>
 
                                 <img src={userImage} alt="userImage"
                                     className='w-[80px] rounded-full'

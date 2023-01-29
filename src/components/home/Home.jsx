@@ -4,37 +4,7 @@ import { useEffect } from 'react'
 import CreateReview from '../review/CreateReview'
 import Services from '../services/Services'
 
-// const dumyData = [
-//     {
-//         image: "https://res.cloudinary.com/dsuh9ww6d/image/upload/v1674466090/house_gipnwl.png",
-//         title: "We have experienced man power",
-//         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt odit explicabo alias"
-//     }, {
-//         image: "https://res.cloudinary.com/dsuh9ww6d/image/upload/v1674466090/house_gipnwl.png",
-//         title: "We have experienced man power",
-//         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt odit explicabo alias"
-//     },
-//     {
-//         image: "https://res.cloudinary.com/dsuh9ww6d/image/upload/v1674466090/house_gipnwl.png",
-//         title: "We have experienced man power",
-//         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt odit explicabo alias"
-//     },
-//     {
-//         image: "https://res.cloudinary.com/dsuh9ww6d/image/upload/v1674466090/house_gipnwl.png",
-//         title: "We have experienced man power",
-//         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt odit explicabo alias"
-//     },
-//     {
-//         image: "https://res.cloudinary.com/dsuh9ww6d/image/upload/v1674466090/house_gipnwl.png",
-//         title: "We have experienced man power",
-//         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt odit explicabo alias"
-//     },
-//     {
-//         image: "https://res.cloudinary.com/dsuh9ww6d/image/upload/v1674466090/house_gipnwl.png",
-//         title: "We have experienced man power",
-//         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt odit explicabo alias"
-//     },
-// ]
+
 
 const Home = ({ user }) => {
 
@@ -45,7 +15,7 @@ const Home = ({ user }) => {
 
         async function fetchReviews() {
             const { data } = await axios.get(
-                `/api/reviews`
+                `https://assignment-11-server-roan-one.vercel.app/api/reviews`
 
             );
             setReviews(data.reviews)

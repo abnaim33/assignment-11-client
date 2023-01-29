@@ -14,7 +14,7 @@ const Orders = ({ user }) => {
 
     useEffect(() => {
         async function fetchOrders() {
-            await fetch(`/api/orders/all`, {
+            await fetch(`https://assignment-11-server-roan-one.vercel.app/api/orders/all`, {
                 method: "GET",
                 headers: {
                     'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ const Orders = ({ user }) => {
                 },
             };
             const { data } = await axios.put(
-                `/api/order/update/${order._id}`,
+                `https://assignment-11-server-roan-one.vercel.app/api/order/update/${order._id}`,
                 { ...order, orderStatus: orderStatus },
                 config
             );
@@ -70,7 +70,7 @@ const Orders = ({ user }) => {
             },
         };
         const { data } = await axios.put(
-            `/api/order/update/${id}`,
+            `https://assignment-11-server-roan-one.vercel.app/api/order/update/${id}`,
             id,
             config
         );

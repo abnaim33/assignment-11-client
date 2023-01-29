@@ -34,7 +34,7 @@ const CreateReview = ({ user }) => {
 
             // const { name, price, description, imageUrl } = product
             const { data } = await axios.post(
-                `/api/review/create`,
+                `https://assignment-11-server-roan-one.vercel.app/api/review/create`,
                 reviewData,
                 config
             );

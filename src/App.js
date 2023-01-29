@@ -16,6 +16,7 @@ import Profile from './components/profile/Profile';
 import Reviews from './components/reviews/Reviews';
 import CreateOrder from './components/createOrder/CreateOrder';
 import Orders from './components/orders/Orders';
+import NotFound from './components/notFound/NotFound';
 function App() {
 
 
@@ -52,6 +53,8 @@ function App() {
           <Route path="/profile" element={<Profile user={user} setUser={setUser} />} />
           <Route path="/order" element={<CreateOrder user={user} />} />
         </Route>
+
+        <Route path="*" element={<NotFound />} />
 
       </Routes>
 
