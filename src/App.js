@@ -20,16 +20,13 @@ function App() {
 
 
   const [user, setUser] = useState({})
-  // const [cart, setCart] = useState([]);
 
 
   useEffect(() => {
-
     onAuthStateChanged(auth, (user) => {
       if (user) {
 
         setUser(user)
-
 
       } else {
 
@@ -41,10 +38,7 @@ function App() {
     <BrowserRouter>
 
       <ToastContainer />
-
       <Header user={user} />
-
-      {/* <Services /> */}
 
       <Routes>
 
@@ -53,21 +47,15 @@ function App() {
         <Route path="/login" element={<Login user={user} />} />
 
         <Route element={<ProtectedRoutes user={user} />}>
-          {/* <Route path="/cart" element={<Cart cart={cart} user={user} />} /> */}
           <Route path="/orders" element={<Orders user={user} />} />
           <Route path="/reviews" element={<Reviews user={user} />} />
           <Route path="/profile" element={<Profile user={user} setUser={setUser} />} />
           <Route path="/order" element={<CreateOrder user={user} />} />
-          {/* <Route path="create-product" element={<CreateProduct user={user} />} /> */}
-
         </Route>
 
       </Routes>
 
-      {/* home */}
-      {/* services */}
-      {/* testimornial */}
-      {/* order */}
+
 
       <Footer />
 

@@ -85,7 +85,7 @@ const Home = ({ user }) => {
                     <div className="flex items-center justify-between flex-wrap px-10">
 
                         {
-                            reviews.map(({ email, username, userImage, reviewText }) => (
+                            reviews.length > 0 && reviews.map(({ email, username, userImage, reviewText }) => (
                                 <div className="md:w-1/4 mx-2 mt-5 w-2/3 md:mr-5 mx-auto rounded-xl bg-[#af9568] 
     flex flex-col items-center cursor-pointer px-5 py-10 
     transition ease-in-out delay-150 bg-[#7f8382] hover:-translate-y-1
